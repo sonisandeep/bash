@@ -57,7 +57,7 @@ alias cpuinfo='lscpu'
 ## get GPU ram on desktop / laptop##
 alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 
-alias ls="exa --icons --color=always $*"
+#alias ls="exa --icons --color=always $*"
 
 alias vdhcp="virsh net-dhcp-leases default"
 
