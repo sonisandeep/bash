@@ -29,3 +29,16 @@ update () {
         echo "Done"
     fi
 }
+
+# Aliases and functions which help in working with virsh and qemu
+function sshl {
+  ip=$(virsh net-dhcp-leases default | grep ${1} | awk '{print $5}' | sed 's/\/24//')
+  ssh ubuntu@${ip} -i ~/.ssh/id_cloudinit_rsa
+}
+
+function myip {
+  ip=$(ip route get 8.8.8.8 | awk -F"src " 'NR==1{split($2,a," ");print a[1]}')
+  echo $ip
+}
+
+export -f sshl
