@@ -76,5 +76,13 @@ alias tn='tmux new-session'
 alias tl='tmux list-sessions'
 
 
-#Proxmox Section
+################################################## Proxmox Section ##################################################
 alias qmt="qm terminal $1 --escape ^]"
+
+
+
+
+
+################################################## Zerotier Section ##################################################
+alias zt-install="curl -s https://install.zerotier.com | sudo bash"
+alias ztcli="zerotier-cli $*"
