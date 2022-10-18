@@ -69,3 +69,7 @@ alias tn='tmux new-session'
 
 # Lists all ongoing sessions
 alias tl='tmux list-sessions'
+
+
+#Proxmox Section
+alias qmt="qm terminal $1 --escape ^]"
