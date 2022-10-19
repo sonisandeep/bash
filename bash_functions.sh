@@ -42,3 +42,9 @@ function myip {
 }
 
 export -f sshl
+
+
+##################################################### PROXMOX ######################################################
+function pve_vmip {
+    qm guest cmd $1 network-get-interfaces
+}
