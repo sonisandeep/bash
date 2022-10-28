@@ -7,6 +7,20 @@ get_OS () {
     hostnamectl | grep -Po "^Operating System: \K[^<]+"
 }
 
+
+simple-http-server() {
+    docker stop http-server
+    docker run --rm \
+            --name http-server \
+            -v $(pwd):/serve \
+            -P \
+            -d \
+            jdkelley/simple-http-server:latest
+    echo -ne "\nBrowse to http://localhost:"
+    docker port http-server | cut -d':' -f'2'
+    docker logs -f http-server
+}
+
 # Updates
 update () {
     if [[ $(get_OS) == *"Ubuntu"* ]]; then
