@@ -39,5 +39,6 @@ unset color_prompt force_color_prompt
 
 
 if [ ${MACHINE} = "Mac" ]; then
-    PROMPT="%F{cyan}%T@%1d%f:~$ "
+    NEWLINE=$'\n'
+    PROMPT="%F{cyan}%T@%d%f:>${NEWLINE}~$ "
 fi
