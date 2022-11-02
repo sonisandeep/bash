@@ -11,6 +11,11 @@ case "${unameOut}" in
 esac
 # echo ${MACHINE}
 
+if [ ${MACHINE} = "Mac"]; then
+    RC_FILE=.zshrc
+else
+    RC_FILE=.bashrc
+fi
 
 # Configs for bashrc
 if [ -f "$BASH_REPO_DIR"/prompt.sh ]; then

@@ -2,8 +2,8 @@
 #
  
 # Source and reload bashrc
-alias edp="vi ~/.bashrc"
-alias rlp="source ~/.bashrc"
+alias edp="vi ~/${RC_FILE}"
+alias rlp="source ~/${RC_FILE}"
 
 # Bash aliases
 alias get_my_ip="echo $(curl -s ifconfig.me)"
