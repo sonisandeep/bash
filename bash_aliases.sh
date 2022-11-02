@@ -85,3 +85,8 @@ alias qmt="qm terminal $1 --escape ^]"
 ################################################## Zerotier Section ##################################################
 alias zt-install="curl -s https://install.zerotier.com | sudo bash"
 alias ztcli="zerotier-cli $*"
+
+
+
+################################################# Mac OS Specific aliases ###########################################
+alias dockervm="docker run -it --privileged --pid=host debian nsenter -t 1 -m -u -n -i sh"
