@@ -11,7 +11,7 @@ case "${unameOut}" in
 esac
 # echo ${MACHINE}
 
-if [ ${MACHINE} = "Mac"]; then
+if [ ${MACHINE} = "Mac" ]; then
     RC_FILE=.zshrc
 else
     RC_FILE=.bashrc
