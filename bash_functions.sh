@@ -62,3 +62,8 @@ export -f sshl
 function pve_vmip {
     qm guest cmd $1 network-get-interfaces
 }
+
+function randomkey() {
+    local NUM_CHARS="${1:-30}"
+    tr -dc A-Za-z0-9 </dev/urandom | head -c ${NUM_CHARS} ; echo ''
+}
