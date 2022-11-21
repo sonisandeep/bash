@@ -29,10 +29,25 @@ if [ -f "$BASH_REPO_DIR"/bash_functions.sh ]; then
     . "$BASH_REPO_DIR"/bash_functions.sh
 fi
 
+# PATH Variable
+export PATH="$PATH:/home/ansible/.local/bin"
+export PATH="$PATH:/home/xcad/.cargo/bin"
 
-# Add this in your ~/.bashrc to load these set of scripts
-# export REPOS_DIR="$HOME""/Repos"
-# export BASH_REPO_DIR="$REPOS_DIR""/bash"
-# if [ -f "$BASH_REPO_DIR"/bashrc.sh ]; then
-#     . "$BASH_REPO_DIR"/bashrc.sh
-# fi
+# Bash History Settings
+HISTCONTROL=ignoreboth
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+shopt -s histappend
+shopt -s checkwinsize
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
