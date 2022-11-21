@@ -49,7 +49,13 @@ fi
 # find out which distribution we are running on
 LFILE="/etc/*-release"
 MFILE="/System/Library/CoreServices/SystemVersion.plist"
-_distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
+
+if [ -f "$MFILE" ]; then
+    # If SystemVersion.plist exists it is a MacOS.
+    _distro="macos"
+else
+    _distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
+fi
 
 # set an icon based on the distro
 # make sure your font is compatible with https://github.com/lukas-w/font-logos
@@ -81,4 +87,10 @@ esac
 
 export STARSHIP_DISTRO="$ICON "
 export STARSHIP_CONFIG=$BASH_REPO_DIR/.config/starship.toml
-eval "$(starship init bash)"
+
+if [ $_distro = "Mac" ]; then
+    eval "$(starship init zsh)"
+else
+    eval "$(starship init bash)"
+fi
+
