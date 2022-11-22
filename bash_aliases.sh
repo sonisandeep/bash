@@ -27,6 +27,8 @@ alias nowdate='date +"%d-%m-%Y"'
 
 alias ports='netstat -tulanp'
 
+alias vi="vim $*"
+
 ## shortcut  for iptables and pass it via sudo#
 alias ipt='sudo /sbin/iptables'
  
