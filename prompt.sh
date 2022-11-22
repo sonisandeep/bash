@@ -89,7 +89,7 @@ esac
 export STARSHIP_DISTRO="$ICON "
 export STARSHIP_CONFIG=$BASH_REPO_DIR/.config/starship.toml
 
-if [ $_distro = "Mac" ]; then
+if [ $_distro = "macos" ]; then
     eval "$(starship init zsh)"
 else
     eval "$(starship init bash)"
