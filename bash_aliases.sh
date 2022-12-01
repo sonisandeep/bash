@@ -7,9 +7,11 @@ alias rlp="source ~/${RC_FILE}"
 
 # Bash aliases
 alias get_my_ip="echo $(curl -s ifconfig.me)"
+alias gh='history|grep'
 
 # General aliases which are helpful
 alias mount="mount |column -t"
+alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
 alias ..='cd ..'
 alias ...='cd ../../../'
 alias .4='cd ../../../../'
@@ -19,6 +21,9 @@ alias .5='cd ../../../../..'
 alias ll="ls -l $*"
 alias la="ls -a $*"
 alias lal="ls -al $*"
+# list by size
+alias lt='ls --human-readable --size -1 -S --classify'
+alias lt='ls -l --human-readable --size -1 -S --classify'
 
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'

@@ -44,6 +44,17 @@ update () {
     fi
 }
 
+function cl() {
+    DIR="$*";
+    # if no DIR given, go home
+    if [ $# -lt 1 ]; then
+            DIR=$HOME;
+    fi;
+    builtin cd "${DIR}" && \
+    # use your preferred ls command
+        ls -F --color=auto
+}
+
 # Aliases and functions which help in working with virsh and qemu
 function sshl {
   ip=$(virsh net-dhcp-leases default | grep ${1} | awk '{print $5}' | sed 's/\/24//')
