@@ -23,7 +23,7 @@ alias la="ls -a $*"
 alias lal="ls -al $*"
 # list by size
 alias lt='ls --human-readable --size -1 -S --classify'
-alias lt='ls -l --human-readable --size -1 -S --classify'
+alias ltl='ls -l --human-readable --size -1 -S --classify'
 
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'
