@@ -15,6 +15,11 @@ alias ...='cd ../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
 
+# ls related aliases
+alias ll="ls -l $*"
+alias la="ls -a $*"
+alias lal="ls -al $*"
+
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
