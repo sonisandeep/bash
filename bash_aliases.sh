@@ -5,6 +5,8 @@
 alias edp="vi ~/${RC_FILE}"
 alias rlp="source ~/${RC_FILE}"
 
+alias bpull="pushd $REPOS_DIR/bash && git pull && popd"
+
 # Bash aliases
 alias get_my_ip="echo $(curl -s ifconfig.me)"
 alias gh='history|grep'
