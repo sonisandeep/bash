@@ -73,8 +73,10 @@ function ssh_ip {
 }
 
 function set_win_title(){
-    echo -ne "\033]0; $USER on $HOSTNAME, in $PWD \007"
+    echo -ne "\033]0; $USER on $HOSTNAME, in $(basename "$PWD") \007"
 }
+
+starship_precmd_user_func="set_win_title"
 
 ##################################################### PROXMOX ######################################################
 function pve_vmip {
