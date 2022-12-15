@@ -72,6 +72,10 @@ function ssh_ip {
     echo $IP_LINE
 }
 
+function set_win_title(){
+    echo -ne "\033]0; $USER on $HOSTNAME, in $PWD \007"
+}
+
 ##################################################### PROXMOX ######################################################
 function pve_vmip {
     qm guest cmd $1 network-get-interfaces
