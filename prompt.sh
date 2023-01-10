@@ -54,7 +54,8 @@ if [ -f "$MFILE" ]; then
     # If SystemVersion.plist exists it is a MacOS.
     _distro="macos"
 else
-    _distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
+    _distro=$(find /etc -type f -follow -name "*-release" -exec awk '/^ID=/' {} \; 2> /dev/null |  awk -F'=' '{ print tolower($2) }')
+    #_distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
 fi
 
 # set an icon based on the distro
